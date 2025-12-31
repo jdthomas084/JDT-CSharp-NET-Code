@@ -1,12 +1,13 @@
 # JDT-CSharp-NET-Code
 Sample Programs written in C# From Coursework
 =============================================
+
 Working With Input
 =============================================
 This program processes a text file.
 
 
-=============================================
+
 Working With Numbers
 =============================================
 This program works with Odd Numbers, algorithmically.
