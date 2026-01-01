@@ -3,7 +3,7 @@ using System.Collections;
 
 /*
 CARD CLASS, Authored by Joshua D. Thomas,
-M.S., I.S.T - Internet/Web Design (Anticipated 2027)
+M.S., I.S.T. - Internet/Web Design (Anticipated 2027)
 
 C# Console Application - Initialize a Deck of Cards
 CARD.CS - Joshua D. Thomas
@@ -36,36 +36,44 @@ namespace MyConsoleApp
             this.str_Suit = set_Suit_string(sut);
         }
 
+        // Declare fields.
         int Rank;
         int Suit;
         bool Facing;
         string str_Rank;
         string str_Suit;
 
+        // GET the Rank
         public int get_Rank(){
             return this.Rank;
         }
 
+        // GET the String assigned to a particular Rank
         public string get_Rank_str(){
             return this.str_Rank;
         }
 
+        // GET the Suit
         public int get_Suit(){
             return this.Suit;
         }
 
+        // GET the String assigned to a particular Suit
         public string get_Suit_str(){
             return this.str_Suit;
         }
 
+        // GET whether the CARD is Face-true ("Up") or Face-false ("Down")
         public bool get_Facing(){
             return this.Facing;
         }
 
+        // Negate the Current Facing - "Flip" the CARD
         public void set_Facing(){
             this.Facing = !this.Facing;
         }
 
+        // Assign a String to a particular Suit
         private string set_Suit_string(int s){
             switch(s){
                 case 14: return "CLUBS";
@@ -85,6 +93,7 @@ namespace MyConsoleApp
             }
         }
 
+        // Assign a String to a particular Rank
         private string set_Rank_string(int r){
             switch(r){
                 case 1: return "ACE";
@@ -105,25 +114,35 @@ namespace MyConsoleApp
             }
         }
     }
+
+    // Main Program
     class Program
     {
+        // Entry Point
         static void Main(string[] args)
         {
+            // Declare a new ArrayList, dynamically expanding to accept the Number of CARDs added to it: The "DECK"
             ArrayList deck = new ArrayList();
-            
-            int counter = 0;
+
+            // Nested For Loop to initialize a CARD object and Add it to the DECK
             for (int s = 25; s >= 14; s--)
             {
                 for (int r = 1; r < 14; r++)
                 {
+                    // 1. Delcare a New CARD
+                    // 2. Add the Card to the DECK
+                    // 3. Print a Debugging message to the console to 'test' each CARD
+                    
                     Card tmpCard = new Card(r, s);
                     deck.Add(tmpCard);
                     System.Console.WriteLine(tmpCard.get_Rank_str() + " of " + tmpCard.get_Suit_str() + " facing " + tmpCard.get_Facing() + ".");
                 }
             }
 
+            // Debugging message written to the Conosole.
             System.Console.WriteLine("Deck Initialized.");
 
         }
     }
 }
+// END
