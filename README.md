@@ -13,3 +13,8 @@ Working With Numbers
 This program works with Odd Numbers, algorithmically.
   Find all Odd Numbers between 0 and upperBound,
   'Map' those numbers to a specific transformation (or None)
+
+
+CARD CLASS
+=============================================
+The beginnings of a turn-based C# Card Game.
