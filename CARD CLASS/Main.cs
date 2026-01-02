@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 
 /*
@@ -123,6 +122,7 @@ namespace MyConsoleApp
         {
             // Declare a new ArrayList, dynamically expanding to accept the Number of CARDs added to it: The "DECK"
             ArrayList deck = new ArrayList();
+            ArrayList shuffled_deck = new ArrayList();
 
             // Nested For Loop to initialize a CARD object and Add it to the DECK
             for (int s = 25; s >= 14; s--)
@@ -142,6 +142,23 @@ namespace MyConsoleApp
             // Debugging message written to the Conosole.
             System.Console.WriteLine("Deck Initialized.");
 
+            // Draw a Random CARD.
+            Program.DrawRandomCard(deck);
+
+            // Debugging message written to the Conosole.
+            System.Console.WriteLine("Card Drawn.");
+        }
+
+        public static void DrawRandomCard(ArrayList D)
+        {
+            //
+            Random r = new Random();// Delcare a new RANDOM
+            int pos_a = r.Next(D.Count);// Randomize the position you are Drawing the Card from
+            Card tempCard = (Card)D[pos_a];// Declare a new, Tempoary CARD
+            tempCard.set_Facing();
+
+            // Debugging output.
+            System.Console.WriteLine(tempCard.get_Rank_str() + " of " + tempCard.get_Suit_str() + " facing " + tempCard.get_Facing() + ".");
         }
     }
 }
