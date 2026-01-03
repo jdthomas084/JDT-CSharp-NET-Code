@@ -17,8 +17,13 @@ Tools Used: grey matter, VS Code, Debugging skills
 
 namespace MyConsoleApp
 {
+    /*
+        Lines 24 - 121: Custom CARD CLASS
+    */
+    
     class Card
     {
+        // New CARD Without anything 'passed' to it
         public Card()
         {
             this.Rank = -1;
@@ -26,6 +31,7 @@ namespace MyConsoleApp
             this.Facing = false;
         }
 
+        // New CARD with 2 [INT] 'passed' to it
         public Card(int rnk, int sut)
         {           
             this.Rank = rnk;     
@@ -36,18 +42,18 @@ namespace MyConsoleApp
         }
 
         // Declare fields.
-        int Rank;
+        int Rank; // Ace through King
         int Suit;
-        bool Facing;
-        string str_Rank;
-        string str_Suit;
+        bool Facing; // Whether the CARD itself is Known/Revealed
+        string str_Rank; // String for the Rank "Ace, Deuce, etc."
+        string str_Suit; // String for the Suit "Hearts, Diamonds, Clubs, etc."
 
         // GET the Rank
         public int get_Rank(){
             return this.Rank;
         }
 
-        // GET the String assigned to a particular Rank
+        // GET the String representation assigned to the Rank
         public string get_Rank_str(){
             return this.str_Rank;
         }
@@ -57,12 +63,12 @@ namespace MyConsoleApp
             return this.Suit;
         }
 
-        // GET the String assigned to a particular Suit
+        // GET the String representation assigned to the Suit
         public string get_Suit_str(){
             return this.str_Suit;
         }
 
-        // GET whether the CARD is Face-true ("Up") or Face-false ("Down")
+        // GET whether the CARD is Known/Revealed
         public bool get_Facing(){
             return this.Facing;
         }
@@ -152,10 +158,10 @@ namespace MyConsoleApp
         public static void DrawRandomCard(ArrayList D)
         {
             //
-            Random r = new Random();// Delcare a new RANDOM
-            int pos_a = r.Next(D.Count);// Randomize the position you are Drawing the Card from
-            Card tempCard = (Card)D[pos_a];// Declare a new, Tempoary CARD
-            tempCard.set_Facing();
+            Random r = new Random(); // Delcare a new RANDOM
+            int pos_a = r.Next(D.Count); // Randomize the position you are Drawing the Card from
+            Card tempCard = (Card)D[pos_a]; // Declare a new, 'Temporary' CARD
+            tempCard.set_Facing(); // Invoke Setter method, Used similarly as an Interface Method, to 'Flip' the CARD
 
             // Debugging output.
             System.Console.WriteLine(tempCard.get_Rank_str() + " of " + tempCard.get_Suit_str() + " facing " + tempCard.get_Facing() + ".");
