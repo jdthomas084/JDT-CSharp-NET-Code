@@ -135,7 +135,7 @@ namespace MyConsoleApp
             {
                 for (int r = 1; r < 14; r++)
                 {
-                    // 1. Delcare a New CARD
+                    // 1. Declare a New CARD
                     // 2. Add the Card to the DECK
                     // 3. Print a Debugging message to the console to 'test' each CARD
                     
@@ -158,9 +158,9 @@ namespace MyConsoleApp
         public static void DrawRandomCard(ArrayList D)
         {
             //
-            Random r = new Random(); // Delcare a new RANDOM
-            int pos_a = r.Next(D.Count); // Randomize the position you are Drawing the Card from
-            Card tempCard = (Card)D[pos_a]; // Declare a new, 'Temporary' CARD
+            Random r = new Random(); // Declare a new RANDOM
+            int pos_a = r.Next(D.Count); // Randomize the position the CARD is Drawn from
+            Card tempCard = (Card)D[pos_a]; // Declare a new, 'Temporary' CARD and store it
             tempCard.set_Facing(); // Invoke Setter method, Used similarly as an Interface Method, to 'Flip' the CARD
 
             // Debugging output.
